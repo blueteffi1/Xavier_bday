@@ -20,10 +20,11 @@ body {
 }
 
 /* Estilos para el header */
+/* Estilos para el header */
 header {
     text-align: center;
     padding: 0;
-    height: 600px;
+    height: 600px; /* Altura para pantallas grandes */
     background-image: url('/img/Xavierfondo.png');
     background-size: cover;
     background-position: center;
@@ -52,17 +53,19 @@ nav ul {
     margin: 0;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten si no caben en una línea */
+    margin-top: 20px; /* Separar la navegación del header */
 }
 
 nav ul li {
-    display: inline;
+    display: inline-block;
     margin: 0 15px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    padding: 5px 15px;
+    padding: 10px 15px; /* Aumentar padding para mejor usabilidad */
     background-color: rgba(29, 18, 49, 0.5);
     border-radius: 10px;
     transition: background-color 0.3s ease;
@@ -71,6 +74,42 @@ nav ul li a {
 nav ul li a:hover {
     background-color: rgba(44, 22, 94, 0.7);
 }
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    /* Header */
+    header {
+        height: 400px; /* Reducir la altura del header en pantallas más pequeñas */
+    }
+
+    /* Navegación en dispositivos móviles */
+    nav ul {
+        flex-direction: column; /* Cambiar a columna en pantallas móviles */
+        justify-content: center; /* Centrar los elementos de navegación */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Espacio vertical entre los enlaces */
+    }
+
+    nav ul li a {
+        padding: 10px 20px; /* Aumentar el padding para facilitar clics en móviles */
+        font-size: 1.2rem; /* Aumentar el tamaño de la fuente en móviles */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Header en pantallas muy pequeñas */
+    header {
+        height: 300px; /* Aún más pequeño en pantallas más pequeñas */
+    }
+
+    nav ul li a {
+        padding: 12px 25px; /* Aumentar un poco más el padding en pantallas muy pequeñas */
+        font-size: 1.3rem; /* Aumentar el tamaño de la fuente */
+    }
+}
+
 
 /* Estilos para el main */
 main {
@@ -245,4 +284,22 @@ button:hover {
     transition: none; /* Elimina transiciones */
     transform: none; /* Sin transformaciones */
     animation: none; /* Sin animaciones */
+}
+/* Estilo para hacer que el video sea responsivo */
+.video-responsive {
+    position: relative;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: black;
+    /* Asegura que el contenedor sea cuadrado en dispositivos móviles */
+}
+
+.video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
