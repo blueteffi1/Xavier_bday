@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ingreso de Usuario</title>
+  <link rel="stylesheet" href="/CSS/stylesentrada.css">
+</head>
+<body>
+
+  <div class="login-box">
+    <h2>Ingreso</h2>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Nombre miembro comunidad" required>
+      <button type="submit">Entrar</button>
+    </form>
+    <p id="errorMessage" class="message"></p>
+  </div>
+
+  <script>
+    // Lista de nombres de usuario válidos
+    const validUsernames = ['Teffi','Asya','Jennifer','Genesis','Vale','Annie','Eliana','Eli','Elizabeth','Gise','Eunny', 'Aidan', 'Ainel', 'Ale', 'Alice', 'Aliz','Maju','Aylin','Ceci','Crisbel','Danny','Gigi','Heiny','Kari','Kim','Koteiza','Lady','Lau','Lexxie','Mar','Mari','Naru','Rayra','Riva','Sally','Sol','Yahaira','Yess','Yet','Zoe']; // Añade los nombres que desees
+    const form = document.getElementById('loginForm');
+    const usernameInput = document.getElementById('username');
+    const errorMessage = document.getElementById('errorMessage');
+  
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevenir el envío del formulario
+  
+      const username = usernameInput.value.trim();
+  
+      // Verificar si el nombre de usuario está en la lista de nombres válidos
+      if (validUsernames.includes(username)) {
+        errorMessage.textContent = ''; // Limpiar el mensaje de error
+        alert('Acceso permitido. Bienvenido!');
+        // Redirigir a la página deseada
+        window.location.href = 'pages/principal.html'; // Cambia esto a la URL deseada
+      } else {
+        errorMessage.textContent = 'Nombre de usuario incorrecto';
+      }
+    });
+  </script>
+  
+
+</body>
+</html>

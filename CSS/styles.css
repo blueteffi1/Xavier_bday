@@ -1,0 +1,248 @@
+/* Estilo global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Asegura que padding y borde no afecten el tamaño total */
+}
+
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('/img/pexels-felixmittermeier-1146134.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    overflow-x: hidden; /* Para evitar el scroll horizontal */
+    background-color: #212529;
+}
+
+/* Estilos para el header */
+header {
+    text-align: center;
+    padding: 0;
+    height: 600px;
+    background-image: url('/img/Xavierfondo.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+/* Gradiente en el header */
+header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+    z-index: 2;
+}
+
+/* Estilos para la navegación */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 15px;
+    background-color: rgba(29, 18, 49, 0.5);
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: rgba(44, 22, 94, 0.7);
+}
+
+/* Estilos para el main */
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+/* Estilos para el pie de página */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo para las imágenes */
+.img-depth, .card-img-top, .img-inline {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: none; /* Elimina transiciones no deseadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para profundidad */
+    object-fit: cover; /* Ajusta sin deformar */
+}
+
+.img-inline {
+    display: inline-block;
+    width: 48%; /* Ajusta el tamaño para que dos imágenes se alineen correctamente */
+    margin-right: 2%;
+}
+
+.img-inline:last-child {
+    margin-right: 0;
+}
+
+/* Ajustes para el carrusel */
+#carouselExample {
+    max-width: 40%;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.carousel-item img {
+    max-width: 50%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    #carouselExample {
+        max-width: 70%;
+    }
+
+    .carousel-item img {
+        max-width: 70%;
+    }
+}
+
+/* Coloca los GIFs en los costados de la página */
+.gif-corner {
+    position: fixed;
+    width: 150px;
+    height: 150px;
+    z-index: 10;
+}
+
+.gif-left {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.gif-right {
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Estilo para el iframe */
+.video-iframe {
+    width: 600px;
+    height: 450px;
+    border: none;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Estilos para los comentarios */
+.comment-section {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.comment-section h3 {
+    margin-top: 0;
+    color: #444;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #6f3fe8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #3333cd15;
+}
+
+.comments-list {
+    margin-top: 20px;
+}
+
+.comment-item {
+    background: #e9e9e9;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+}
+
+.comment-item p {
+    margin: 0;
+}
+
+.comment-item .username {
+    font-weight: bold;
+    color: #333;
+}
+
+.comment-item small {
+    font-size: 12px;
+    color: #666;
+}
+
+/* Aseguramos que la imagen ocupe toda la pantalla */
+.full-screen-wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Evita el desbordamiento */
+}
+
+.card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen sin deformar, cubriendo el contenedor */
+    transition: none; /* Elimina transiciones */
+    transform: none; /* Sin transformaciones */
+    animation: none; /* Sin animaciones */
+}
